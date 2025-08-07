@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "71529914904",
+    "project_id": "digitalsalttask",
+    "storage_bucket": "digitalsalttask.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71529914904:android:875add3d97ae023c29d96d",
+        "android_client_info": {
+          "package_name": "com.mrdathia.digitalsalt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71529914904-ovlvl9osdqp8860icq7d5uj9iv2ecttp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJk8de1H-6lu45rstLP9KrhACY17wOXb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71529914904-oritesueu3rpbdht9e7d1ho4v1jpcb56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
