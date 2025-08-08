@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
       body: Center(
         child: InkWell(
           onDoubleTap: () {
-            Navigator.of(context).pushReplacementNamed(AppRoutes.login);
+            Navigator.of(context).pushReplacementNamed(AppRoutes.home);
           },
           child: Text(AppStrings.splash),
         ),

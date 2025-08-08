@@ -1,5 +1,5 @@
-import 'package:digitalsalttask/app/views/screens/splash.dart';
 import 'package:digitalsalttask/app/views/screens/login.dart';
+import 'package:digitalsalttask/app/views/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 import 'app_routes.dart';
@@ -9,7 +9,7 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.splash:
         return MaterialPageRoute(builder: (context) => SplashScreen());
-      case AppRoutes.login: 
+      case AppRoutes.login:
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case AppRoutes.dashboard:
         return MaterialPageRoute(builder: (context) => SplashScreen());

@@ -41,6 +41,7 @@ dependencies:
   flutter_riverpod:
   get_storage:
   google_sign_in:
+  google_fonts:
 
 
 dev_dependencies:

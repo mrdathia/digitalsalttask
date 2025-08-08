@@ -1,11 +1,14 @@
 import 'dart:developer';
+
+import 'package:digitalsalttask/app/domain/repository/auth_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:digitalsalttask/app/domain/repository/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
   static final AuthRepoImpl _instance = AuthRepoImpl._internal();
+
   factory AuthRepoImpl() => _instance;
+
   AuthRepoImpl._internal();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;

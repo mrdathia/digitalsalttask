@@ -16,7 +16,9 @@ class LoginScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(height: kToolbarHeight + MediaQuery.of(context).padding.top),
             TextFormField(onChanged: loginNotifier.setUsername),
+            SizedBox(height: 24),
             TextFormField(
               onChanged: loginNotifier.setPassword,
               obscureText: true,
