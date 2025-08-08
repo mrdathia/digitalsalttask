@@ -12,7 +12,6 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final loginNotifier = ref.watch(loginNotifierProvider.notifier);
-    final state = ref.watch(loginNotifierProvider);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

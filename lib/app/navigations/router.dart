@@ -9,7 +9,7 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.splash:
         return MaterialPageRoute(builder: (context) => SplashScreen());
-      case AppRoutes.login:
+      case AppRoutes.login: 
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case AppRoutes.dashboard:
         return MaterialPageRoute(builder: (context) => SplashScreen());
