@@ -38,8 +38,9 @@ dependencies:
   firebase_auth:
   path_provider:
   permission_handler:
-  riverpod:
+  flutter_riverpod:
   get_storage:
+  google_sign_in:
 
 
 dev_dependencies:

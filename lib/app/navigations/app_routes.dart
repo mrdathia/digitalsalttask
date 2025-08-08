@@ -3,10 +3,10 @@ class AppRoutes {
   static const login = '/login';
   static const register = '/register';
 
-  // Dashboard and Portfolio Routes
+  // Dashboard and Search Routes
   static const dashboard = '/dashboard';
   static const searchDetails = '/searchDetails';
-  static const sipCalc = '/sipCalculator';
+  static const home = '/home';
 
   // Profile Routes
   static const profile = '/profile';
