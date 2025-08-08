@@ -84,7 +84,6 @@ class AuthRepoImpl extends AuthRepo {
   Future<void> signOut() async {
     try {
       await _auth.signOut();
-      await _googleSignIn.signOut();
       await _storage.remove(_tokenKey);
       log("User logged out & token cleared");
     } catch (error, stack) {

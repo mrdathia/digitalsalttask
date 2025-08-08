@@ -3,6 +3,10 @@ abstract class AuthRepo{
     throw UnimplementedError("Implement");
   }
 
+  Future<bool> signUp({required String email, required String password}){
+    throw UnimplementedError("Implement");
+  }
+
   /// Sign out from both Firebase and Google
   Future<void> signOut() {
     throw UnimplementedError();
