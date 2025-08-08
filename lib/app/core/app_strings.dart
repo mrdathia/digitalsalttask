@@ -7,4 +7,6 @@ class AppStrings {
   static const books = "Books";
   static const author = "Author";
   static const published = "Published";
+  static const password = "Password";
+  static const passwordHint = "1234@Xyz";
 }

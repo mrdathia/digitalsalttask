@@ -4,12 +4,10 @@ import 'package:get_storage/get_storage.dart';
 import 'package:digitalsalttask/app/domain/repository/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
-  // --- Singleton setup ---
   static final AuthRepoImpl _instance = AuthRepoImpl._internal();
   factory AuthRepoImpl() => _instance;
   AuthRepoImpl._internal();
 
-  // --- Dependencies ---
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GetStorage _storage = GetStorage();
 
@@ -19,10 +17,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<bool> login({required String email, required String password}) async {
     try {
-      UserCredential userCred = await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCred = await _auth.signInWithEmailAndPassword(email: email, password: password);
 
       String? token = await userCred.user?.getIdToken();
       if (token != null) {
@@ -59,10 +54,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<bool> signUp({required String email, required String password}) async {
     try {
-      UserCredential userCred = await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
       String? token = await userCred.user?.getIdToken();
       if (token != null) {

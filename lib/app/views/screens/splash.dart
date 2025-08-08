@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: InkWell(
-          onDoubleTap: (){
+          onDoubleTap: () {
             Navigator.of(context).pushReplacementNamed(AppRoutes.login);
           },
           child: Text(AppStrings.splash),
@@ -18,5 +18,4 @@ class SplashScreen extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -8,12 +8,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: InkWell(
-        onDoubleTap: (){
+        onDoubleTap: () {
           Navigator.of(context).pushReplacementNamed(AppRoutes.login);
         },
         child: Text("Unleash Your Books"),
       ),
     );
   }
-
 }

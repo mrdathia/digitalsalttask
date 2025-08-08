@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: AppRoutes.splash,
       onGenerateRoute: AppRouter.generateRoute,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-      ),
-
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary)),
     );
   }
 }

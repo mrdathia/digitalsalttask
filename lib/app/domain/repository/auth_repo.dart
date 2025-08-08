@@ -1,9 +1,9 @@
-abstract class AuthRepo{
-  Future<bool> login({required String email, required String password}){
+abstract class AuthRepo {
+  Future<bool> login({required String email, required String password}) {
     throw UnimplementedError("Implement");
   }
 
-  Future<bool> signUp({required String email, required String password}){
+  Future<bool> signUp({required String email, required String password}) {
     throw UnimplementedError("Implement");
   }
 

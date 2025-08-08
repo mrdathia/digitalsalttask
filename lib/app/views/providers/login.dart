@@ -5,11 +5,12 @@ class LoginNotifier extends Notifier<void> {
   String password = '';
   bool isLoggedIn = false;
   bool isLoading = false;
+  bool showPassword = false;
   String error = '';
 
   @override
   void build() {
-    // no state to initialize
+    // nothing to initialize
   }
 
   void setUsername(String val) {
@@ -18,6 +19,11 @@ class LoginNotifier extends Notifier<void> {
 
   void setPassword(String val) {
     password = val;
+  }
+
+  void toggleShowPassword() {
+    showPassword = !showPassword;
+    state = null; // trigger UI rebuild
   }
 
   Future<void> login() async {
@@ -44,3 +50,8 @@ class LoginNotifier extends Notifier<void> {
     error = '';
   }
 }
+
+// Riverpod provider
+final loginNotifierProvider = NotifierProvider<LoginNotifier, void>(() {
+  return LoginNotifier();
+});

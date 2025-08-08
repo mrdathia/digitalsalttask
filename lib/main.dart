@@ -9,7 +9,5 @@ void main() {
 
 Future<void> initApp() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options:
-  );
+  await Firebase.initializeApp();
 }
