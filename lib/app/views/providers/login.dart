@@ -1,57 +1,51 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LoginNotifier extends Notifier<void> {
-  String username = '';
-  String password = '';
-  bool isLoggedIn = false;
-  bool isLoading = false;
-  bool showPassword = false;
-  String error = '';
+import '../../navigations/app_routes.dart';
+import 'login_state.dart';
 
+class LoginNotifier extends Notifier<LoginState> {
   @override
-  void build() {
-    // nothing to initialize
+  LoginState build() => const LoginState();
+
+  void setUsername(String val) => state = state.copyWith(username: val);
+
+  void setPassword(String val) => state = state.copyWith(password: val);
+
+  void toggleShowPassword() => state = state.copyWith(showPassword: !state.showPassword);
+
+  void checkIsLoggedIn(BuildContext context) {
+    state = state.copyWith(isCheckingSession: false);
+    if (state.isLoggedIn && context.mounted) {
+      Navigator.of(context).pushReplacementNamed(AppRoutes.home);
+    }
   }
 
-  void setUsername(String val) {
-    username = val;
-  }
+  Future<void> signUp() async {
+    state = state.copyWith(isLoading: true);
 
-  void setPassword(String val) {
-    password = val;
-  }
+    await Future.delayed(const Duration(seconds: 2));
 
-  void toggleShowPassword() {
-    showPassword = !showPassword;
-    state = null; // trigger UI rebuild
+    if (state.username == 'admin' && state.password == 'admin') {
+      state = state.copyWith(isLoggedIn: true, error: '', isLoading: false);
+    } else {
+      state = state.copyWith(isLoggedIn: false, error: 'Invalid credentials', isLoading: false);
+    }
   }
 
   Future<void> login() async {
-    isLoading = true;
+    state = state.copyWith(isLoading: true);
 
-    // Simulate login
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
 
-    if (username == 'admin' && password == 'admin') {
-      isLoggedIn = true;
-      error = '';
+    if (state.username == 'admin' && state.password == 'admin') {
+      state = state.copyWith(isLoggedIn: true, error: '', isLoading: false);
     } else {
-      isLoggedIn = false;
-      error = 'Invalid credentials';
+      state = state.copyWith(isLoggedIn: false, error: 'Invalid credentials', isLoading: false);
     }
-
-    isLoading = false;
   }
 
-  void logout() {
-    isLoggedIn = false;
-    username = '';
-    password = '';
-    error = '';
-  }
+  void logout() => state = const LoginState();
 }
 
-// Riverpod provider
-final loginNotifierProvider = NotifierProvider<LoginNotifier, void>(() {
-  return LoginNotifier();
-});
+final loginNotifierProvider = NotifierProvider<LoginNotifier, LoginState>(LoginNotifier.new);

@@ -1,7 +1,7 @@
-import 'package:digitalsalttask/app/views/screens/login.dart';
 import 'package:digitalsalttask/app/views/screens/splash.dart';
 import 'package:flutter/material.dart';
 
+import '../views/screens/auth.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -10,7 +10,7 @@ class AppRouter {
       case AppRoutes.splash:
         return MaterialPageRoute(builder: (context) => SplashScreen());
       case AppRoutes.login:
-        return MaterialPageRoute(builder: (context) => LoginScreen());
+        return MaterialPageRoute(builder: (context) => AuthScreen());
       case AppRoutes.dashboard:
         return MaterialPageRoute(builder: (context) => SplashScreen());
       case AppRoutes.searchDetails:

@@ -45,13 +45,13 @@ class LoginScreen extends ConsumerWidget {
         Row(
           children: [
             ExpandedElevatedButton(
-              childWidget: ref.watch(loginNotifierProvider.select((s) => s.isLoggedIn))
+              childWidget: !ref.watch(loginNotifierProvider.select((s) => s.isLoggedIn))
                   ? const CircularProgressIndicator(color: Colors.white)
-                  : const Text("Login"),
+                  : const Text(AppStrings.createAC),
               onPressed: ref.watch(loginNotifierProvider.select((s) => s.isLoggedIn))
                   ? () {}
                   : () async {
-                      await loginNotifier.login();
+                      await loginNotifier.signUp();
                       if (ref.watch(loginNotifierProvider.select((s) => s.isLoggedIn))) {
                         if (context.mounted) {
                           Navigator.pushReplacementNamed(context, AppRoutes.home);
